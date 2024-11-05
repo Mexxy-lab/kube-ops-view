@@ -21,7 +21,7 @@ spec:
       - name: service
         # see https://github.com/hjacobs/kube-ops-view/releases
         image: hjacobs/kube-ops-view:0.9.1
-        args:
+        # args:
         # remove this option to use built-in memory store
         # - --redis-url=redis://kube-ops-view-redis:6379
         ports:
