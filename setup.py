@@ -1,7 +1,7 @@
 import sys
 
-from setuptools import find_packages, setup
-from setuptools.command.test import test as TestCommand
+from setuptools import find_packages, setup # type: ignore
+from setuptools.command.test import test as TestCommand # type: ignore
 
 from pathlib import Path
 
@@ -33,7 +33,7 @@ class PyTest(TestCommand):
         self.pytest_args.extend(['tests'])
 
     def run_tests(self):
-        import pytest
+        import pytest # type: ignore
 
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
