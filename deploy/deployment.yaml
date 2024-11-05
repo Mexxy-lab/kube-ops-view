@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: kube-system    # <-- Add your namespace here
   labels:
     application: kube-ops-view
     version: v0.9.1
@@ -19,11 +20,7 @@ spec:
       serviceAccount: kube-ops-view
       containers:
       - name: service
-        # see https://github.com/hjacobs/kube-ops-view/releases
         image: hjacobs/kube-ops-view:0.9.1
-        # args:
-        # remove this option to use built-in memory store
-        # - --redis-url=redis://kube-ops-view-redis:6379
         ports:
         - containerPort: 8080
           protocol: TCP
@@ -44,3 +41,4 @@ spec:
           readOnlyRootFilesystem: true
           runAsNonRoot: true
           runAsUser: 1000
+
