@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: kube-system    # <-- Add your namespace here
+  namespace: default    # <-- Add your namespace here
   labels:
     application: kube-ops-view
     version: v0.9.1
